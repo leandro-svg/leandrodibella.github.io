@@ -1,14 +1,13 @@
 ---
-title: "Paper Title Number 3"
+title: "LAM3D: Leveraging Attention for Monocular 3D Object Detection"
 collection: publications
-category: manuscripts
-permalink: /publication/2015-10-01-paper-title-number-3
-excerpt: 'This paper is about the number 3. The number 4 is left for future work.'
-date: 2015-10-01
-venue: 'Journal 1'
-slidesurl: 'https://academicpages.github.io/files/slides3.pdf'
-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
-citation: 'Your Name, You. (2015). &quot;Paper Title Number 3.&quot; <i>Journal 1</i>. 1(3).'
+category: conferences
+permalink: /publication/2024-lam3d
+excerpt: 'Attention-based approach for monocular 3D object detection.'
+date: 2024-09-01
+venue: 'IEEE International Workshop on Multimedia Signal Processing (MMSP)'
+paperurl: 'https://scholar.google.com/scholar?q=LAM3D%20Leveraging%20Attention%20for%20Monocular%203D%20Object%20Detection'
+bibtexurl: '/files/lam3d.bib'
+citation: 'Sas, D. A., Di Bella, L., Lyu, Y., Oniga, F., & Munteanu, A. (2024). “LAM3D: Leveraging Attention for Monocular 3D Object Detection.” <i>IEEE International Workshop on Multimedia Signal Processing (MMSP)</i>.'
 ---
-
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+Attention-based approach for monocular 3D object detection.

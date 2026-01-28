@@ -1,13 +1,14 @@
 ---
-title: "Paper Title Number 4"
+title: "HybridTrack: A Hybrid Approach for Robust Multi-Object Tracking"
 collection: publications
-category: conferences
-permalink: /publication/2024-02-17-paper-title-number-4
-excerpt: 'This paper is about fixing template issue #693.'
-date: 2024-02-17
-venue: 'GitHub Journal of Bugs'
-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
-citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
+category: manuscripts
+permalink: /publication/2025-hybridtrack
+excerpt: 'Developed HybridTrack, a state-of-the-art 3D vehicle tracking system with a real-time data-driven Kalman Filter on an autonomous driving dataset.'
+date: 2025-01-01
+venue: 'IEEE Robotics and Automation Letters (RA-L/ICRA)'
+paperurl: 'https://arxiv.org/abs/2501.01275'
+bibtexurl: '/files/hybridtrack.bib'
+codeurl: 'https://github.com/leandro-svg/HybridTrack'
+citation: 'Di Bella, L., Lyu, Y., Cornelis, B., & Munteanu, A. (2025). “HybridTrack: A Hybrid Approach for Robust Multi-Object Tracking.” <i>IEEE Robotics and Automation Letters (RA-L/ICRA)</i>.'
 ---
-
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+Developed HybridTrack, a state-of-the-art 3D vehicle tracking system with a real-time data-driven Kalman Filter on an autonomous driving dataset.

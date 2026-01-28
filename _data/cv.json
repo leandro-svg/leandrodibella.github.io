@@ -1,67 +1,128 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Leandro Di Bella",
+    "email": "leandro.dibella@gmail.com",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://leandrodibella.github.io",
+    "summary": "PhD student at ETRO (VUB) focused on computer vision and AI for autonomous driving and drone navigation (detection, multi-object tracking, VLMs).",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "city": "Brussels",
+      "countryCode": "BE",
+      "region": "Belgium"
     },
     "profiles": [
       {
+        "network": "Website",
+        "username": "",
+        "url": "https://leandrodibella.github.io"
+      },
+      {
         "network": "Google Scholar",
         "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "url": "https://scholar.google.de/citations?user=f7IDHsgAAAAJ&hl=en"
       },
       {
         "network": "ORCID",
         "username": "",
-        "url": "https://orcid.org/yourorcidurl"
+        "url": "https://orcid.org/0009-0000-1731-7205"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "leandro-svg",
+        "url": "https://github.com/leandro-svg"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "leandro-di-bella-62381413b",
+        "url": "https://www.linkedin.com/in/leandro-di-bella-62381413b/"
+      },
+      {
+        "network": "Mappx",
+        "username": "",
+        "url": "https://mappx.app"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "Mappx",
+      "position": "Founder",
+      "website": "https://mappx.app",
+      "startDate": "2025-08-01",
+      "endDate": "",
+      "summary": "Launched Mappx mobile app and built the full-stack product.",
+      "highlights": [
+        "Developed full-stack Flutter frontend and FastAPI backend integrating location-based social sharing with maps and photos",
+        "Implemented cost-effective backend infrastructure using Azure and Firebase to support scalable user engagement and App Store deployment"
+      ]
+    },
+    {
+      "company": "MACQ Mobility",
+      "position": "Intern",
+      "website": "",
+      "startDate": "2022-08-01",
+      "endDate": "2022-10-01",
+      "summary": "Developed and integrated instance segmentation on a Jetson TX2 edge device.",
+      "highlights": ["Python / C++"]
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
+      "institution": "Solvay Brussels School",
+      "area": "Industrial and Technological Management",
+      "studyType": "Advanced Master",
+      "startDate": "2025-01-01",
+      "endDate": "2027-01-01",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
+      "institution": "Vrije Universiteit Brussel (VUB)",
+      "area": "Engineering Sciences (Artificial Intelligence & Computer Vision)",
+      "studyType": "PhD",
+      "startDate": "2023-01-01",
+      "endDate": "",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
+      "institution": "Bruface Faculty of Engineering (ULB/VUB)",
+      "area": "Electrical Engineering (Information Technology Systems option)",
+      "studyType": "Master",
+      "startDate": "2020-01-01",
+      "endDate": "2023-01-01",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "Bruface Faculty of Engineering (ULB/VUB)",
+      "area": "Engineering",
+      "studyType": "Bachelor",
+      "startDate": "2017-01-01",
+      "endDate": "2020-01-01",
       "gpa": null,
       "courses": []
     }
   ],
-  "skills": [],
-  "languages": [],
+  "skills": [
+    {
+      "name": "Programming",
+      "level": "",
+      "keywords": ["Python", "Flutter", "FastAPI", "PyTorch", "C++", "CUDA", "TensorRT"]
+    },
+    {
+      "name": "Tools/Platforms",
+      "level": "",
+      "keywords": ["VS Code", "Azure Cloud Services", "Docker", "Firebase", "GitHub CI/CD"]
+    }
+  ],
+  "languages": [
+    {"language": "French", "fluency": "Native"},
+    {"language": "English", "fluency": "C1"},
+    {"language": "Dutch", "fluency": "B1"}
+  ],
   "interests": [],
   "references": [],
   "publications": [

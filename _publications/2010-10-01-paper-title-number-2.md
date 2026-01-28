@@ -1,14 +1,13 @@
 ---
-title: "Paper Title Number 2"
+title: "Monokalman: Monocular Vehicle Pose Estimation with Kalman Filter-Based Temporal Consistency"
 collection: publications
-category: manuscripts
-permalink: /publication/2010-10-01-paper-title-number-2
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
-date: 2010-10-01
-venue: 'Journal 1'
-slidesurl: 'https://academicpages.github.io/files/slides2.pdf'
-paperurl: 'https://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+category: conferences
+permalink: /publication/2024-monokalman
+excerpt: 'Monocular vehicle pose estimation with Kalman filter-based temporal consistency.'
+date: 2024-06-01
+venue: 'IEEE International Conference on Mobile Data Management (MDM)'
+paperurl: 'https://scholar.google.com/scholar?q=Monokalman%20Monocular%20Vehicle%20Pose%20Estimation%20Kalman%20Filter-Based%20Temporal%20Consistency'
+bibtexurl: '/files/monokalman.bib'
+citation: 'Di Bella, L., Lyu, Y., Cornelis, B., & Munteanu, A. (2024). “Monokalman: Monocular Vehicle Pose Estimation with Kalman Filter-Based Temporal Consistency.” <i>IEEE International Conference on Mobile Data Management (MDM)</i>.'
 ---
-
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+Monocular vehicle pose estimation with Kalman filter-based temporal consistency.
