@@ -9,39 +9,39 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Your Name / Site Title"
+title                    : "Leandro Di Bella"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+name                     : &name "Leandro Di Bella"
+description              : &description "Computer vision & AI for autonomous driving and drone navigation."   # Update this with a general description of your site, this is the default if not overridden by a page
+url                      : https://leandrodibella.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "leandro-svg/leandrodibella.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  avatar           : "profile_picture.png"
+  name             : "Leandro Di Bella"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
-  uri              : # URL
-  email            : "none@example.org" 
+  bio              : "PhD candidate seeking a full-time opportunity. Specialized in computer vision and AI for autonomous driving and drone navigation, with expertise in detection, multi-object tracking, and VLMs. Currently working on multi-agent motion forecasting with flow-based generative AI and modular sensor fusion for autonomous drones."
+  location         : "Brussels, Belgium"
+  employer         : "ETRO, VUB"
+  uri              : "https://leandrodibella.github.io"
+  email            : "leandro.dibella@gmail.com" 
 
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.de/citations?user=f7IDHsgAAAAJ&hl=en"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0009-0000-1731-7205"
   semantic         : # URL
   ssrn             : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : # URL
   researchgate     : # URL
   scopus           : # URL
   zotero           : # URL
@@ -51,22 +51,22 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "leandro-svg"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
   artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : # Username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
   goodreads        : # Username
   google_plus      : # Username
   keybase          : # Username
-  instagram        : # Username
+  instagram        : "mappxapp"
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "leandro-di-bella-62381413b"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -151,6 +151,13 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://leandrodibella.github.io"
+    - "https://github.com/leandro-svg"
+    - "https://www.linkedin.com/in/leandro-di-bella-62381413b/"
+    - "https://scholar.google.de/citations?user=f7IDHsgAAAAJ&hl=en"
+    - "https://orcid.org/0009-0000-1731-7205"
+    - "https://mappx.app"
+    - "https://www.instagram.com/mappxapp/"
 
 
 # Analytics

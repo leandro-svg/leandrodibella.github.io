@@ -1,18 +1,15 @@
 # Authors
 
-Name Name:
-  name        : "Name Name"
-  uri         : "https://name.com"
-  email       : "name@name.com"
-  bio         : "This is the first name."
-  avatar      : "bio-photo-2.jpg"
-  twitter     : "name"
-  google_plus : "Name"
-
-Name2 Name2:
-  name        : "Name2 Name2"
-  email       : "name2@name2.com"
-  bio         : "I ordered what?"
-  avatar      : "bio-photo.jpg"
-  twitter     : "name2"
-  google_plus : "Name"
+Leandro Di Bella:
+  name          : "Leandro Di Bella"
+  uri           : "https://leandrodibella.github.io"
+  email         : "leandro.dibella@gmail.com"
+  bio           : "PhD candidate specialized in computer vision and AI for autonomous driving and drone navigation."
+  avatar        : "profile_picture.png"
+  location      : "Brussels, Belgium"
+  employer      : "ETRO, VUB"
+  github        : "leandro-svg"
+  linkedin      : "leandro-di-bella-62381413b"
+  googlescholar : "https://scholar.google.de/citations?user=f7IDHsgAAAAJ&hl=en"
+  orcid         : "https://orcid.org/0009-0000-1731-7205"
+  instagram     : "mappxapp"
