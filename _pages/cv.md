@@ -59,9 +59,27 @@ Skills
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+{% assign pubs_sorted = site.publications | sort: 'date' %}
+
+{% if site.publication_category %}
+  {% for category in site.publication_category %}
+    <h3>{{ category[1].title }}</h3>
+    <ul>
+      {% for post in pubs_sorted %}
+        {% if post.category != category[0] %}
+          {% continue %}
+        {% endif %}
+        {% include archive-single-cv.html %}
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% else %}
+  <ul>
+    {% for post in pubs_sorted %}
+      {% include archive-single-cv.html %}
+    {% endfor %}
+  </ul>
+{% endif %}
   
 Talks
 ======

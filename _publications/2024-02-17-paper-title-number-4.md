@@ -6,6 +6,8 @@ permalink: /publication/2025-hybridtrack
 excerpt: 'Developed HybridTrack, a state-of-the-art 3D vehicle tracking system with a real-time data-driven Kalman Filter on an autonomous driving dataset.'
 date: 2025-01-01
 venue: 'IEEE Robotics and Automation Letters (RA-L/ICRA)'
+header:
+  teaser: publications/hybridtrack.svg
 paperurl: 'https://arxiv.org/abs/2501.01275'
 bibtexurl: '/files/hybridtrack.bib'
 codeurl: 'https://github.com/leandro-svg/HybridTrack'

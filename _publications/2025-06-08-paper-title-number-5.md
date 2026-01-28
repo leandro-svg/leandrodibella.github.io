@@ -6,6 +6,8 @@ permalink: /publication/2025-refergpt
 excerpt: 'A zero-shot referring multi-object tracking framework that links natural language queries with 3D object tracking using multi-modal large language models.'
 date: 2025-06-01
 venue: 'IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)'
+header:
+  teaser: publications/refergpt.svg
 paperurl: 'https://arxiv.org/pdf/2504.09195'
 bibtexurl: '/files/refergpt.bib'
 codeurl: 'https://github.com/Tzoulio/ReferGPT'
