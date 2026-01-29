@@ -1,15 +1,11 @@
 ---
-title: "LAM3D: Leveraging Attention for Monocular 3D Object Detection"
+title: "(Duplicate) LAM3D entry (hidden)"
 collection: publications
-category: conferences
-permalink: /publication/2024-lam3d
-excerpt: 'Attention-based approach for monocular 3D object detection.'
-date: 2024-09-01
-venue: 'IEEE International Workshop on Multimedia Signal Processing (MMSP)'
-header:
-  teaser: publications/lam3d.svg
-paperurl: 'https://scholar.google.com/scholar?q=LAM3D%20Leveraging%20Attention%20for%20Monocular%203D%20Object%20Detection'
-bibtexurl: '/files/lam3d.bib'
-citation: 'Sas, D. A., Di Bella, L., Lyu, Y., Oniga, F., & Munteanu, A. (2024). “LAM3D: Leveraging Attention for Monocular 3D Object Detection.” <i>IEEE International Workshop on Multimedia Signal Processing (MMSP)</i>.'
+permalink: /publication/_duplicate-lam3d
+published: false
+sitemap: false
 ---
-Attention-based approach for monocular 3D object detection.
+
+This file is intentionally hidden.
+
+The real LAM3D entry lives in `_publications/2024-02-17-paper-title-number-4.md`.

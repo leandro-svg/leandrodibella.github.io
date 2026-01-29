@@ -2,6 +2,8 @@
 title: "HybridTrack (RA-L/ICRA 2025)"
 excerpt: "State-of-the-art 3D vehicle multi-object tracking with a real-time data-driven Kalman Filter for autonomous driving."
 collection: portfolio
+weight: 3
+date: 2025-04-01
 ---
 
 HybridTrack is a research project focused on **robust multi-object tracking (MOT) for autonomous driving**, with an emphasis on stable and reliable tracking over time.
@@ -19,3 +21,7 @@ What I did
 Publication
 ======
 Published in **IEEE Robotics and Automation Letters (RA-L/ICRA)** (2025).
+
+Project date
+======
+Apr 1, 2025

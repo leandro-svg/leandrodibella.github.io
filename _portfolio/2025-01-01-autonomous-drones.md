@@ -2,6 +2,8 @@
 title: "Autonomous Drones (Perception + Sensor Fusion)"
 excerpt: "Multi-sensor fusion (RGB/LiDAR/multispectral/IMU/GNSS) for autonomous navigation, localization, and perception."
 collection: portfolio
+weight: 4
+date: 2026-01-01
 ---
 
 This project area focuses on **autonomous navigation for drones**, where reliable perception and decision-making require robust **multi-sensor fusion** and strong **localization** under real-world constraints.
@@ -20,3 +22,7 @@ What I’m working on
 * Building deployment-minded systems: latency-aware, stable, and testable on real platforms.
 
 If you want, I can tailor this page to the exact setup you use (sensors, platform, and whether you’re targeting onboard inference or offboard).
+
+Project date
+======
+2026

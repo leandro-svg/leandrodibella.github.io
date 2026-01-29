@@ -34,3 +34,13 @@ I'm seeking a **full-time opportunity** where I can contribute to developing and
 Contact
 ======
 Email: [leandro.dibella@gmail.com](mailto:leandro.dibella@gmail.com)
+
+Links
+------
+- Website: <https://leandrodibella.github.io>
+- GitHub: <https://github.com/leandro-svg>
+- LinkedIn: <https://www.linkedin.com/in/leandro-di-bella-62381413b/>
+- Google Scholar: <https://scholar.google.de/citations?user=f7IDHsgAAAAJ&hl=en>
+- ORCID: <https://orcid.org/0009-0000-1731-7205>
+- Mappx: <https://mappx.app>
+- Instagram: <https://www.instagram.com/mappxapp/>

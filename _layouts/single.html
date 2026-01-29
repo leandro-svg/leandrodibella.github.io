@@ -52,7 +52,12 @@ layout: default
           {% assign has_links = true %}
         {% endif %}
 
-        {% if page.citation or has_links %}
+        {% assign has_demo_videos = false %}
+        {% if page.demo_videos_count %}
+          {% assign has_demo_videos = true %}
+        {% endif %}
+
+        {% if page.citation or has_links or has_demo_videos %}
           <p style="font-size: smaller">
             {% if page.citation %}
               Recommended citation: {{ page.citation }}
@@ -80,6 +85,13 @@ layout: default
               {% if page.codeurl %}
                 {% unless first_link %} | {% endunless %}<a href="{{ page.codeurl }}">Code</a>
                 {% assign first_link = false %}
+              {% endif %}
+
+              {% if page.demo_videos_count %}
+                {% for i in (1..page.demo_videos_count) %}
+                  {% unless first_link %} | {% endunless %}<span class="btn btn--small" style="opacity:0.65; cursor:default;">Demo {{ i }} (soon)</span>
+                  {% assign first_link = false %}
+                {% endfor %}
               {% endif %}
             {% endif %}
           </p>

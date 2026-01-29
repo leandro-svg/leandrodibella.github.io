@@ -57,7 +57,12 @@
       {% assign has_links = true %}
     {% endif %}
 
-    {% if post.citation or has_links %}
+    {% assign has_demo_videos = false %}
+    {% if post.demo_videos_count %}
+      {% assign has_demo_videos = true %}
+    {% endif %}
+
+    {% if post.citation or has_links or has_demo_videos %}
       <p>
         {% if post.citation %}
           Recommended citation: {{ post.citation }}
@@ -85,6 +90,13 @@
           {% if post.codeurl %}
             {% unless first_link %} | {% endunless %}<a href="{{ post.codeurl }}">Code</a>
             {% assign first_link = false %}
+          {% endif %}
+
+          {% if post.demo_videos_count %}
+            {% for i in (1..post.demo_videos_count) %}
+              {% unless first_link %} | {% endunless %}<span class="btn btn--small" style="opacity:0.65; cursor:default;">Demo {{ i }} (soon)</span>
+              {% assign first_link = false %}
+            {% endfor %}
           {% endif %}
         {% endif %}
       </p>

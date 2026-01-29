@@ -11,26 +11,36 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
+{% assign coral_slug = '2025-coral-reef-fish-identification' %}
+{% assign priority_slugs = '2025-hybridtrack,2025-refergpt,2024-deepkalpose' | split: ',' %}
+
+{% assign rendered_urls = '' | split: '' %}
+
+{% for slug in priority_slugs %}
+  {% for post in site.publications %}
+    {% if post.published == false %}{% continue %}{% endif %}
+    {% if post.url contains slug %}
+      {% unless rendered_urls contains post.url %}
+        {% assign rendered_urls = rendered_urls | push: post.url %}
+        {% include archive-single.html %}
       {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+    {% endif %}
   {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
+{% endfor %}
+
+{% for post in site.publications reversed %}
+  {% if post.published == false %}{% continue %}{% endif %}
+  {% if rendered_urls contains post.url %}{% continue %}{% endif %}
+  {% if post.url contains coral_slug %}{% continue %}{% endif %}
+  {% include archive-single.html %}
+{% endfor %}
+
+{% for post in site.publications %}
+  {% if post.published == false %}{% continue %}{% endif %}
+  {% if post.url contains coral_slug %}
     {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+  {% endif %}
+{% endfor %}
 
 
 

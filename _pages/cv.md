@@ -59,22 +59,46 @@ Skills
 
 Publications
 ======
-{% assign pubs_sorted = site.publications | sort: 'date' %}
+{% assign coral_slug = '2025-coral-reef-fish-identification' %}
 
 {% if site.publication_category %}
   {% for category in site.publication_category %}
-    <h3>{{ category[1].title }}</h3>
+### {{ category[1].title }}
+
     <ul>
-      {% for post in pubs_sorted %}
-        {% if post.category != category[0] %}
-          {% continue %}
-        {% endif %}
-        {% include archive-single-cv.html %}
-      {% endfor %}
+      {% assign pubs_in_category = site.publications | where: "category", category[0] | sort: "date" | reverse %}
+
+      {% if category[0] == 'manuscripts' %}
+        {% for post in pubs_in_category %}
+          {% if post.published == false %}
+            {% continue %}
+          {% endif %}
+          {% if post.url contains coral_slug %}
+            {% continue %}
+          {% endif %}
+          {% include archive-single-cv.html %}
+        {% endfor %}
+        {% for post in pubs_in_category %}
+          {% if post.published == false %}
+            {% continue %}
+          {% endif %}
+          {% if post.url contains coral_slug %}
+            {% include archive-single-cv.html %}
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% for post in pubs_in_category %}
+          {% if post.published == false %}
+            {% continue %}
+          {% endif %}
+          {% include archive-single-cv.html %}
+        {% endfor %}
+      {% endif %}
     </ul>
   {% endfor %}
 {% else %}
   <ul>
+    {% assign pubs_sorted = site.publications | sort: 'date' | reverse %}
     {% for post in pubs_sorted %}
       {% include archive-single-cv.html %}
     {% endfor %}
@@ -83,16 +107,23 @@ Publications
   
 Talks
 ======
-  <ul>{% for post in site.talks reversed %}
+<ul>
+  {% for post in site.talks reversed %}
+    {% if post.published == false %}{% continue %}{% endif %}
     {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
+  {% endfor %}
+</ul>
   
 Teaching
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+* Teaching Assistant (2.5 years) — Machine Learning and Big Data Processing, Vrije Universiteit Brussel (VUB)
   
-Service and leadership
+Supervision
 ======
-* Currently signed in to 43 different slack teams
+* Supervised 6 Master's theses:
+  * Jules Gerard — Automating Coral Reef Fish Family Identification on Video Transects Using a YOLOv8-Based Deep Learning Pipeline
+  * Diana Alexandra Sas — Monocular 3D Object Detection with Pyramid Vision Transformer
+  * Kyan David — Autonomous Drone Navigation in GNSS-Degraded and Non-Permissive Environments
+  * Mohammed Marsour — Pruning and Quantization Strategies for Efficient Camera-Based Object Detection
+  * Cristian Vladoiu — Pedestrian Intention Prediction via Vision-Language Action Models
+  * Mayur Ashok Sonawane — Object Pose Estimation on Embedded Devices

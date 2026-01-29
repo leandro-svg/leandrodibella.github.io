@@ -2,6 +2,7 @@
 title: "Embedded AI for Edge Devices (TensorRT/ONNX)"
 excerpt: "Real-time instance segmentation on NVIDIA edge hardware using ONNX and TensorRT." 
 collection: portfolio
+weight: 5
 ---
 
 This project focuses on **deploying computer vision models on edge devices** under tight latency and compute constraints.

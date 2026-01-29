@@ -7,8 +7,9 @@ author_profile: true
 
 {% include base_path %}
 
+{% assign projects_sorted = site.portfolio | sort: "weight" %}
 
-{% for post in site.portfolio %}
+{% for post in projects_sorted %}
   {% include archive-single.html %}
 {% endfor %}
 
