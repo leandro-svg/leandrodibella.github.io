@@ -3,6 +3,8 @@ layout: single
 title: "Highlights"
 permalink: /highlights/
 author_profile: true
+published: false
+sitemap: false
 ---
 
 I’m a PhD candidate at **ETRO (VUB)** working on **computer vision and generative AI for autonomous perception** — spanning detection, multi-object tracking, VLMs, and multi-sensor fusion.

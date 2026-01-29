@@ -3,9 +3,18 @@ layout: single
 title: "About"
 permalink: /
 author_profile: true
+excerpt: "Computer vision & generative AI for autonomous perception (detection, tracking, VLMs) in driving & drones."
 redirect_from:
   - /about/
 ---
+
+<div class="notice--primary">
+  <strong>Computer vision &amp; generative AI for autonomous perception</strong><br/>
+  Detection, tracking, VLMs, and motion forecasting for driving &amp; drones.<br/>
+  <a class="btn btn--primary btn--small" href="/cv/">CV</a>
+  <a class="btn btn--inverse btn--small" href="/publications/">Publications</a>
+  <a class="btn btn--inverse btn--small" href="/portfolio/">Projects</a>
+</div>
 
 I'm **Leandro Di Bella**, a PhD candidate at **ETRO (VUB)** based in **Brussels, Belgium**.
 
@@ -13,9 +22,21 @@ My work sits at the intersection of **computer vision** and **AI for autonomous 
 
 What I work on
 ======
-- **Autonomous perception:** detection, multi-object tracking, and vision-language models (VLMs).
-- **Generative modeling for forecasting:** multi-agent motion forecasting using flow-based generative approaches.
-- **Autonomous drones:** modular **multi-sensor fusion** (RGB, LiDAR, multispectral, IMU, GNSS) for navigation, localization, and robust perception.
+
+<div class="focus-grid">
+  <div class="archive__item">
+    <h3 class="archive__item-title">Autonomous perception</h3>
+    <p class="archive__item-excerpt">Detection, multi-object tracking, and vision-language models (VLMs).</p>
+  </div>
+  <div class="archive__item">
+    <h3 class="archive__item-title">Generative forecasting</h3>
+    <p class="archive__item-excerpt">Multi-agent motion forecasting using flow-based generative approaches.</p>
+  </div>
+  <div class="archive__item">
+    <h3 class="archive__item-title">Autonomous drones</h3>
+    <p class="archive__item-excerpt">Modular multi-sensor fusion (RGB, LiDAR, multispectral, IMU, GNSS) for navigation, localization, and robust perception.</p>
+  </div>
+</div>
 
 Entrepreneurship
 ======

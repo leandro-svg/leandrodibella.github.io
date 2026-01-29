@@ -3,6 +3,7 @@ layout: archive
 title: "CV"
 permalink: /cv/
 author_profile: true
+excerpt: "Curriculum vitae: education, experience, publications, talks, teaching, and supervision."
 redirect_from:
   - /resume
 ---
@@ -65,7 +66,7 @@ Publications
   {% for category in site.publication_category %}
 ### {{ category[1].title }}
 
-    <ul>
+<ul>
       {% assign pubs_in_category = site.publications | where: "category", category[0] | sort: "date" | reverse %}
 
       {% if category[0] == 'manuscripts' %}
@@ -94,7 +95,8 @@ Publications
           {% include archive-single-cv.html %}
         {% endfor %}
       {% endif %}
-    </ul>
+
+</ul>
   {% endfor %}
 {% else %}
   <ul>

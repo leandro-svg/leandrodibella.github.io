@@ -1,0 +1,107 @@
+/* Site-specific visual polish (loaded after main.css) */
+
+:root {
+  --ldb-accent: #2dd4bf; /* teal-400 */
+  --ldb-bg-1: #0f172a; /* slate-900 */
+  --ldb-bg-2: #134e4a; /* teal-900 */
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+/* Slightly wider + calmer reading experience */
+#main {
+  max-width: 980px;
+}
+
+/* Nicer headings rhythm */
+.page__content h1,
+.page__content h2,
+.page__content h3,
+.page__content h4 {
+  letter-spacing: -0.01em;
+}
+
+.page__content h1,
+.page__content h2 {
+  margin-top: 1.6em;
+}
+
+/* Modern link underline */
+a {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.14em;
+}
+
+/* Hero callout */
+.notice--primary {
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(19, 78, 74, 0.92));
+  color: #f8fafc;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.18);
+}
+
+.notice--primary a {
+  color: #f8fafc;
+}
+
+/* Buttons: slightly more app-like */
+.btn {
+  border-radius: 999px;
+  padding: 0.55em 1em;
+}
+
+.btn--primary {
+  background: var(--ldb-accent);
+  border-color: var(--ldb-accent);
+  color: #0b1220;
+}
+
+.btn--inverse {
+  background: rgba(248, 250, 252, 0.08);
+  border-color: rgba(248, 250, 252, 0.22);
+  color: #f8fafc;
+}
+
+.btn--inverse:hover {
+  background: rgba(248, 250, 252, 0.14);
+}
+
+/* Give archive items a subtle card feel */
+.archive__item {
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 22px rgba(2, 6, 23, 0.05);
+}
+
+/* Homepage: render the three focus areas as a grid */
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0b1220;
+  }
+
+  .archive__item {
+    background: rgba(15, 23, 42, 0.55);
+    border-color: rgba(148, 163, 184, 0.18);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  }
+}

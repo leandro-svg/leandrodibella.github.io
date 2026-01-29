@@ -1,5 +1,10 @@
 {
-	"name": "OOjs UI icon academic-progressive",
+	"name": "Leandro Di Bella",
+	"short_name": "Leandro",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#2f7f93",
 	"icons": [
 		{
 			"src": "/images/favicon-192x192.png",
