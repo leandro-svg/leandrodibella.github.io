@@ -14,9 +14,53 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Slightly wider + calmer reading experience */
+/* Layout width
+   Minimal Mistakes centers content for readability; this widens the container
+   so pages don't feel squeezed into the middle on wide screens. */
 #main {
-  max-width: 980px;
+  max-width: 1360px;
+}
+
+.masthead__inner-wrap,
+.breadcrumbs,
+.wrapper {
+  max-width: 1360px;
+}
+
+@media (min-width: 80em) {
+  #main {
+    max-width: 1560px;
+  }
+
+  .masthead__inner-wrap,
+  .breadcrumbs,
+  .wrapper {
+    max-width: 1560px;
+  }
+}
+
+/* Desktop layout: Minimal Mistakes reserves a big right gutter on `.page`
+   (padding-right ~17%) which makes content feel “stuck in the middle”. */
+@media (min-width: 57.8125em) {
+  .page {
+    padding-right: 1em;
+    padding-left: 1.25em;
+  }
+
+  .archive {
+    padding-left: 1.25em;
+  }
+}
+
+@media (min-width: 80em) {
+  .page {
+    padding-right: 1em;
+    padding-left: 1.5em;
+  }
+
+  .archive {
+    padding-left: 1.5em;
+  }
 }
 
 /* Nicer headings rhythm */

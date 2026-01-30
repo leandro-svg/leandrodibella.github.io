@@ -3,6 +3,7 @@ layout: single
 title: "About"
 permalink: /
 author_profile: true
+classes: wide
 excerpt: "Computer vision & generative AI for autonomous perception (detection, tracking, VLMs) in driving & drones."
 redirect_from:
   - /about/
