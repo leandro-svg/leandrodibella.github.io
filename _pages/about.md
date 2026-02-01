@@ -28,9 +28,9 @@ redirect_from:
       </ul>
     </div>
     <div class="bento-actions">
-      <a class="btn btn--primary" href="/cv/">CV</a>
-      <a class="btn btn--inverse" href="/publications/">Publications</a>
-      <a class="btn btn--inverse" href="/portfolio/">Projects</a>
+      <a class="btn btn--primary" href="{{ '/cv/' | relative_url }}">CV</a>
+      <a class="btn btn--inverse" href="{{ '/publications/' | relative_url }}">Publications</a>
+      <a class="btn btn--inverse" href="{{ '/portfolio/' | relative_url }}">Projects</a>
     </div>
   </section>
 
@@ -43,7 +43,7 @@ redirect_from:
   <section class="bento-card bento-list">
     <div class="bento-card__header">
       <h2 class="bento-card__title">Featured publications</h2>
-      <a class="bento-card__link" href="/publications/">All →</a>
+      <a class="bento-card__link" href="{{ '/publications/' | relative_url }}">All →</a>
     </div>
     <div class="bento-list__items">
       {% assign featured_slugs = '2025-hybridtrack,2025-refergpt,2024-deepkalpose,2025-chronofusion' | split: ',' %}
