@@ -1,0 +1,30 @@
+{% comment %}
+  Bento-style header for archive pages.
+  Params:
+    - kicker: small uppercase label
+    - title: main title (defaults to page.title)
+    - subtitle: short description (defaults to page.excerpt)
+    - actions: pre-rendered HTML for buttons/links (optional)
+    - stats: pre-rendered HTML for stat chips (optional)
+{% endcomment %}
+
+<section class="bento-card bento-page-header">
+  {% if include.kicker %}
+    <p class="bento-page-header__kicker">{{ include.kicker }}</p>
+  {% endif %}
+
+  <h1 class="bento-page-header__title">{{ include.title | default: page.title }}</h1>
+
+  {% assign _subtitle = include.subtitle | default: page.excerpt %}
+  {% if _subtitle %}
+    <p class="bento-page-header__subtitle">{{ _subtitle }}</p>
+  {% endif %}
+
+  {% if include.stats %}
+    <div class="bento-page-header__stats">{{ include.stats }}</div>
+  {% endif %}
+
+  {% if include.actions %}
+    <div class="bento-page-header__actions">{{ include.actions }}</div>
+  {% endif %}
+</section>

@@ -4,6 +4,8 @@ title: "Projects"
 permalink: /portfolio/
 author_profile: true
 excerpt: "Selected projects in autonomous perception, multi-object tracking, motion forecasting, and mobile app development."
+bento_header: true
+bento_kicker: "Build"
 ---
 
 {% include base_path %}
@@ -12,7 +14,11 @@ excerpt: "Selected projects in autonomous perception, multi-object tracking, mot
 
 <div class="portfolio-grid">
   {% for post in projects_sorted %}
-    {% include archive-single.html %}
+    <a class="project-card" href="{{ base_path }}{{ post.url }}" aria-label="Open project: {{ post.title }}">
+      <div class="project-card__title">{{ post.title }}</div>
+      {% if post.excerpt %}<div class="project-card__excerpt">{{ post.excerpt }}</div>{% endif %}
+      {% if post.date %}<div class="project-card__meta">{{ post.date | date: '%Y' }}</div>{% endif %}
+    </a>
   {% endfor %}
 </div>
 

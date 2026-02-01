@@ -15,9 +15,61 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html %}
 
-  <div class="archive">
+  <div class="archive{% if page.bento_header %} archive--bento{% endif %}">
     {% unless page.header.overlay_color or page.header.overlay_image %}
-      <h1 class="page__title">{{ page.title }}</h1>
+      {% if page.bento_header %}
+        {% assign _bento_actions_html = page.bento_actions_html %}
+        {% assign _bento_stats_html = page.bento_stats_html %}
+
+        {% if _bento_stats_html == nil %}
+          {% if page.url == '/publications/' %}
+            {% assign _pubs = site.publications | where_exp: 'p', 'p.published != false' %}
+            {% capture _bento_stats_html %}
+              <span class="bento-stat">{{ _pubs | size }} items</span>
+              <span class="bento-stat">Peer-reviewed + preprints</span>
+            {% endcapture %}
+          {% elsif page.url == '/portfolio/' %}
+            {% assign _projects = site.portfolio | where_exp: 'p', 'p.published != false' %}
+            {% capture _bento_stats_html %}
+              <span class="bento-stat">{{ _projects | size }} projects</span>
+              <span class="bento-stat">Research + product</span>
+            {% endcapture %}
+          {% elsif page.url == '/talks/' %}
+            {% assign _talks = site.talks | where_exp: 'p', 'p.published != false' %}
+            {% capture _bento_stats_html %}
+              <span class="bento-stat">{{ _talks | size }} talks</span>
+              <span class="bento-stat">Invited + presentations</span>
+            {% endcapture %}
+          {% endif %}
+        {% endif %}
+
+        {% if _bento_actions_html == nil %}
+          {% if page.url == '/publications/' %}
+            {% capture _bento_actions_html %}
+              {% if site.author.googlescholar %}
+                <a class="btn btn--primary btn--small" href="{{ site.author.googlescholar }}" rel="noopener noreferrer">Google Scholar</a>
+              {% endif %}
+            {% endcapture %}
+          {% elsif page.url == '/portfolio/' %}
+            {% capture _bento_actions_html %}
+              {% if site.author.github %}
+                <a class="btn btn--primary btn--small" href="https://github.com/{{ site.author.github }}" rel="noopener noreferrer">GitHub</a>
+              {% endif %}
+              {% if site.author.app %}
+                <a class="btn btn--inverse btn--small" href="{{ site.author.app }}" rel="noopener noreferrer">Mappx</a>
+              {% endif %}
+            {% endcapture %}
+          {% elsif page.url == '/talks/' and site.talkmap_link == true %}
+            {% capture _bento_actions_html %}
+              <a class="btn btn--inverse btn--small" href="{{ '/talkmap.html' | relative_url }}">Talk map</a>
+            {% endcapture %}
+          {% endif %}
+        {% endif %}
+
+        {% include bento-archive-header.html kicker=page.bento_kicker title=page.title subtitle=page.excerpt actions=_bento_actions_html stats=_bento_stats_html %}
+      {% else %}
+        <h1 class="page__title">{{ page.title }}</h1>
+      {% endif %}
     {% endunless %}
     {{ content }}
   </div>

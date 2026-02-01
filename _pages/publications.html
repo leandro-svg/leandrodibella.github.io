@@ -4,11 +4,9 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 excerpt: "Peer-reviewed publications and preprints in computer vision, tracking, and vision-language models."
+bento_header: true
+bento_kicker: "Research"
 ---
-
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
 
 {% include base_path %}
 
@@ -17,31 +15,33 @@ excerpt: "Peer-reviewed publications and preprints in computer vision, tracking,
 
 {% assign rendered_urls = '' | split: '' %}
 
-{% for slug in priority_slugs %}
+<div class="bento-stack">
+  {% for slug in priority_slugs %}
+    {% for post in site.publications %}
+      {% if post.published == false %}{% continue %}{% endif %}
+      {% if post.url contains slug %}
+        {% unless rendered_urls contains post.url %}
+          {% assign rendered_urls = rendered_urls | push: post.url %}
+          {% include archive-single.html %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
+  {% for post in site.publications reversed %}
+    {% if post.published == false %}{% continue %}{% endif %}
+    {% if rendered_urls contains post.url %}{% continue %}{% endif %}
+    {% if post.url contains coral_slug %}{% continue %}{% endif %}
+    {% include archive-single.html %}
+  {% endfor %}
+
   {% for post in site.publications %}
     {% if post.published == false %}{% continue %}{% endif %}
-    {% if post.url contains slug %}
-      {% unless rendered_urls contains post.url %}
-        {% assign rendered_urls = rendered_urls | push: post.url %}
-        {% include archive-single.html %}
-      {% endunless %}
+    {% if post.url contains coral_slug %}
+      {% include archive-single.html %}
     {% endif %}
   {% endfor %}
-{% endfor %}
-
-{% for post in site.publications reversed %}
-  {% if post.published == false %}{% continue %}{% endif %}
-  {% if rendered_urls contains post.url %}{% continue %}{% endif %}
-  {% if post.url contains coral_slug %}{% continue %}{% endif %}
-  {% include archive-single.html %}
-{% endfor %}
-
-{% for post in site.publications %}
-  {% if post.published == false %}{% continue %}{% endif %}
-  {% if post.url contains coral_slug %}
-    {% include archive-single.html %}
-  {% endif %}
-{% endfor %}
+</div>
 
 
 
