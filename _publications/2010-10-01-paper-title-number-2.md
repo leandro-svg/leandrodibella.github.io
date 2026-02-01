@@ -7,9 +7,21 @@ excerpt: 'Monocular vehicle pose estimation with Kalman filter-based temporal co
 date: 2024-06-01
 venue: 'IEEE International Conference on Mobile Data Management (MDM)'
 header:
-  teaser: publications/monokalman.svg
+  teaser: publications/monokalman.png
+authors:
+  - Leandro Di Bella
+  - Yangxintong Lyu
+  - Bruno Cornelis
+  - Adrian Munteanu
 paperurl: 'https://scholar.google.com/scholar?q=Monokalman%20Monocular%20Vehicle%20Pose%20Estimation%20Kalman%20Filter-Based%20Temporal%20Consistency'
 bibtexurl: '/files/monokalman.bib'
 citation: 'Di Bella, L., Lyu, Y., Cornelis, B., & Munteanu, A. (2024). “Monokalman: Monocular Vehicle Pose Estimation with Kalman Filter-Based Temporal Consistency.” <i>IEEE International Conference on Mobile Data Management (MDM)</i>.'
 ---
+
+{% if page.header.teaser %}
+<a class="js-lightbox publication__detail-hero" href="{{ '/images/' | append: page.header.teaser | relative_url }}" aria-label="Open image">
+  <img src="{{ '/images/' | append: page.header.teaser | relative_url }}" alt="{{ page.title }}" loading="lazy" />
+</a>
+{% endif %}
+
 Monocular vehicle pose estimation with Kalman filter-based temporal consistency.

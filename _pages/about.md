@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "About"
+title: "Leandro Di Bella"
 permalink: /
 author_profile: true
 classes: wide
@@ -11,10 +11,12 @@ redirect_from:
 
 <div class="notice--primary">
   <strong>Computer vision &amp; generative AI for autonomous perception</strong><br/>
-  Detection, tracking, VLMs, and motion forecasting for driving &amp; drones.<br/>
-  <a class="btn btn--primary btn--small" href="/cv/">CV</a>
-  <a class="btn btn--inverse btn--small" href="/publications/">Publications</a>
-  <a class="btn btn--inverse btn--small" href="/portfolio/">Projects</a>
+  Detection, tracking, VLMs, and motion forecasting for driving &amp; drones.
+  <div style="margin-top: 0.6rem">
+    <a class="btn btn--primary btn--small" href="/cv/">CV</a>
+    <a class="btn btn--inverse btn--small" href="/publications/">Publications</a>
+    <a class="btn btn--inverse btn--small" href="/portfolio/">Projects</a>
+  </div>
 </div>
 
 I'm **Leandro Di Bella**, a PhD candidate at **ETRO (VUB)** based in **Brussels, Belgium**.
@@ -39,15 +41,22 @@ What I work on
   </div>
 </div>
 
-Entrepreneurship
+Personal project
 ======
-I also built and launched **Mappx**, a map-centric social travel app:
-- **Mobile:** Flutter (iOS + Android)
-- **Backend:** FastAPI + PostgreSQL on Azure
-- **Media:** Azure Blob Storage
-- **Maps:** Mapbox
-- **Auth:** OAuth + email/password
-- **Ops:** GitHub CI/CD (GitHub Actions)
+<div class="archive__item">
+  <h3 class="archive__item-title">Mappx</h3>
+  <p class="archive__item-excerpt">Map-centric social travel app (1000+ users).</p>
+  <p class="archive__item-excerpt" style="margin-top: 0.5rem">
+    <span class="btn btn--small" style="opacity:0.7; cursor:default;">Flutter</span>
+    <span class="btn btn--small" style="opacity:0.7; cursor:default;">FastAPI</span>
+    <span class="btn btn--small" style="opacity:0.7; cursor:default;">PostgreSQL</span>
+    <span class="btn btn--small" style="opacity:0.7; cursor:default;">Azure</span>
+    <span class="btn btn--small" style="opacity:0.7; cursor:default;">Mapbox</span>
+  </p>
+  <p style="margin-top: 0.75rem">
+    <a class="btn btn--primary btn--small" href="https://mappx.app">mappx.app</a>
+  </p>
+</div>
 
 What I'm looking for
 ======
