@@ -379,8 +379,36 @@ html[data-theme="dark"] .greedy-nav .visible-links li.selected > a {
   background: var(--ui-card);
   border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-lg);
-  padding: 1rem;
+  padding: 0.85rem 1rem 1rem;
   box-shadow: var(--ui-shadow-soft);
+}
+
+/* Sidebar author profile: center avatar + name, tighten spacing */
+.sidebar .author__avatar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sidebar .author__avatar img {
+  display: block;
+  margin: 0;
+}
+
+.sidebar .author__content {
+  padding: 0;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.sidebar .author__name {
+  margin: 0.35rem 0 0.35rem;
+  text-align: center;
+}
+
+.sidebar .author__bio,
+.sidebar .author__pronouns {
+  margin-top: 0.35rem;
 }
 
 /* On desktop the sidebar is `position: fixed` and the base theme uses `padding-top: 70px`
@@ -797,24 +825,30 @@ html[data-theme="dark"] .bento-card__link {
 }
 
 .bento-avatar {
-  padding: 0.85rem;
-  display: grid;
-  gap: 0.75rem;
-  align-content: space-between;
+  /* Image-tile card on the homepage: edge-to-edge */
+  padding: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.bento-avatar a {
+  display: block;
+  height: 100%;
 }
 
 .bento-avatar__img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
-  border-radius: var(--ui-radius-lg);
-  border: 1px solid var(--ui-border);
-  box-shadow: var(--ui-shadow-soft);
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
 }
 
 html[data-theme="dark"] .bento-avatar__img {
-  border-color: var(--ui-border-dark);
-  box-shadow: var(--ui-shadow-dark);
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .bento-avatar__name {

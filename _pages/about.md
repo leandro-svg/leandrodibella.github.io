@@ -35,13 +35,9 @@ redirect_from:
   </section>
 
   <aside class="bento-card bento-avatar">
-    <a class="js-lightbox" href="{{ '/images/profile_picture.png' | relative_url }}" aria-label="Open profile photo">
-      <img class="bento-avatar__img" src="{{ '/images/profile_picture.png' | relative_url }}" alt="Leandro Di Bella" loading="lazy" />
+    <a class="js-lightbox" href="{{ '/images/AD_DRONE.png' | relative_url }}" aria-label="Open drone image">
+      <img class="bento-avatar__img" src="{{ '/images/AD_DRONE.png' | relative_url }}" alt="Autonomous drone" loading="lazy" />
     </a>
-    <div class="bento-avatar__meta">
-      <div class="bento-avatar__name">Leandro Di Bella</div>
-      <div class="bento-avatar__role">Autonomous perception · MOT · VLMs · Forecasting</div>
-    </div>
   </aside>
 
   <section class="bento-card bento-list">
