@@ -10,7 +10,9 @@ excerpt: "Selected projects in autonomous perception, multi-object tracking, mot
 
 {% assign projects_sorted = site.portfolio | sort: "weight" %}
 
-{% for post in projects_sorted %}
-  {% include archive-single.html %}
-{% endfor %}
+<div class="portfolio-grid">
+  {% for post in projects_sorted %}
+    {% include archive-single.html %}
+  {% endfor %}
+</div>
 
