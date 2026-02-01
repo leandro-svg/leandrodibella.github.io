@@ -13,8 +13,8 @@ title                    : "Leandro Di Bella"
 title_separator          : "-"
 name                     : &name "Leandro Di Bella"
 description              : &description "Computer vision & generative AI for autonomous perception (detection, tracking, VLMs) in driving & drones."   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://leandro-svg.github.io # GitHub Pages project site hostname
-baseurl                  : "/leandro-svg.github.io" # GitHub Pages project site subpath
+url                      : https://leandro-svg.github.io # GitHub Pages hostname
+baseurl                  : "/leandro-svg.github.io" # Project site subpath (repo name)
 repository               : "leandro-svg/leandro-svg.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
