@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://leandrodibella.github.io/sitemap.xml
+Sitemap: https://leandro-svg.github.io/sitemap.xml
