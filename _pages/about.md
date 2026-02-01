@@ -21,13 +21,11 @@ redirect_from:
           I work on deployable perception systems with strong temporal consistency and practical robustness.
         </p>
       </div>
-      <div class="bento-hero__chips">
-        <span class="bento-tag">Detection</span>
-        <span class="bento-tag">Multi-object tracking</span>
-        <span class="bento-tag">Vision-language models</span>
-        <span class="bento-tag">Motion forecasting</span>
-        <span class="bento-tag">Sensor fusion</span>
-      </div>
+      <ul class="bento-mini-list" aria-label="Focus areas">
+        <li><strong>Multi-object tracking:</strong> stable 3D MOT for autonomy.</li>
+        <li><strong>Vision-language:</strong> grounding &amp; reasoning for perception.</li>
+        <li><strong>Forecasting:</strong> generative motion prediction in complex scenes.</li>
+      </ul>
     </div>
     <div class="bento-actions">
       <a class="btn btn--primary" href="/cv/">CV</a>
@@ -81,7 +79,7 @@ redirect_from:
       <span class="bento-tag">Sensor fusion</span>
     </div>
     <p class="bento-muted" style="margin-top: 0.7rem">
-      I build deployable perception systems with strong temporal consistency and practical robustness.
+        Current focus: real-time robustness, temporal consistency, and reliable behavior under distribution shift.
     </p>
   </section>
 

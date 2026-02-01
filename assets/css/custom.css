@@ -6,35 +6,37 @@
 
   /* Layout */
   --ui-container: 1360px;
-  --ui-container-xl: 1560px;
-  --ui-gutter: 1rem;
+  --ui-container-xl: 1520px;
+  --ui-gutter: clamp(0.9rem, 3vw, 1.5rem);
   --ui-masthead-height: 70px;
 
-  /* Light theme tokens (bento-like UI) */
-  --ui-bg: #fbf3f2;
-  --ui-bg-2: #f7f3ff;
+  /* White theme tokens */
+  --ui-bg: #ffffff;
+  --ui-bg-2: #ffffff;
   --ui-text: #0f172a;
   --ui-muted: rgba(15, 23, 42, 0.65);
-  --ui-card: rgba(255, 255, 255, 0.78);
-  --ui-card-2: rgba(255, 236, 234, 0.72);
-  --ui-border: rgba(15, 23, 42, 0.10);
+
+  --ui-card: rgba(255, 255, 255, 0.98);
+  --ui-card-2: rgba(255, 255, 255, 0.98);
+  --ui-border: rgba(15, 23, 42, 0.12);
   --ui-shadow: 0 14px 40px rgba(2, 6, 23, 0.08);
   --ui-shadow-soft: 0 10px 26px rgba(2, 6, 23, 0.06);
   --ui-radius-lg: 22px;
   --ui-radius-md: 16px;
 
-  /* Dark theme tokens */
-  --ui-bg-dark: #0b1220;
-  --ui-bg-2-dark: #111827;
-  --ui-text-dark: #f8fafc;
-  --ui-muted-dark: rgba(226, 232, 240, 0.70);
-  --ui-card-dark: rgba(15, 23, 42, 0.55);
-  --ui-border-dark: rgba(148, 163, 184, 0.18);
-  --ui-shadow-dark: 0 18px 60px rgba(0, 0, 0, 0.35);
+  /* Keep dark-mode visually identical (white theme only) */
+  --ui-bg-dark: #ffffff;
+  --ui-bg-2-dark: #ffffff;
+  --ui-text-dark: #0f172a;
+  --ui-muted-dark: rgba(15, 23, 42, 0.65);
+  --ui-card-dark: rgba(255, 255, 255, 0.98);
+  --ui-border-dark: rgba(15, 23, 42, 0.12);
+  --ui-shadow-dark: 0 14px 40px rgba(2, 6, 23, 0.08);
+
   --ui-link: #0f766e;
   --ui-link-hover: #115e59;
-  --ui-link-dark: #5eead4;
-  --ui-link-dark-hover: #99f6e4;
+  --ui-link-dark: #0f766e;
+  --ui-link-dark-hover: #115e59;
 }
 
 html {
@@ -64,8 +66,8 @@ body {
 
 /* Respect explicit theme toggle when present */
 html[data-theme="dark"] body {
-  color: var(--ui-text-dark);
-  background: var(--ui-bg-dark);
+  color: var(--ui-text);
+  background: var(--ui-bg);
 }
 
 /* Publications: thumbnail next to text (consistent size) */
@@ -280,6 +282,11 @@ html[data-theme="dark"] a:hover {
   background: transparent;
 }
 
+/* White theme only: hide toggle */
+#theme-toggle {
+  display: none;
+}
+
 .masthead::after {
   display: none;
 }
@@ -288,6 +295,21 @@ html[data-theme="dark"] a:hover {
   margin-left: auto;
   margin-right: auto;
   padding: 0.75rem var(--ui-gutter);
+}
+
+@media (max-width: 900px) {
+  .masthead__inner-wrap {
+    padding: 0.55rem var(--ui-gutter);
+  }
+
+  .greedy-nav {
+    padding: 0.45rem 0.55rem;
+  }
+
+  .greedy-nav .visible-links a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+  }
 }
 
 .greedy-nav {
@@ -381,7 +403,7 @@ html[data-theme="dark"] .sidebar.sticky {
 /* Hero callout */
 .notice--primary {
   border: 1px solid var(--ui-border);
-  background: linear-gradient(135deg, rgba(255, 236, 234, 0.92), rgba(226, 232, 240, 0.75));
+  background: var(--ui-card);
   color: var(--ui-text);
   border-radius: var(--ui-radius-lg);
   box-shadow: var(--ui-shadow);
@@ -392,10 +414,10 @@ html[data-theme="dark"] .sidebar.sticky {
 }
 
 html[data-theme="dark"] .notice--primary {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(17, 24, 39, 0.72));
-  border-color: var(--ui-border-dark);
-  color: var(--ui-text-dark);
-  box-shadow: var(--ui-shadow-dark);
+  background: var(--ui-card);
+  border-color: var(--ui-border);
+  color: var(--ui-text);
+  box-shadow: var(--ui-shadow);
 }
 
 /* Buttons: slightly more app-like */
@@ -403,6 +425,13 @@ html[data-theme="dark"] .notice--primary {
   border-radius: 999px;
   padding: 0.5em 0.95em;
   transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+  text-decoration: none !important;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:focus-visible {
+  text-decoration: none !important;
 }
 
 .btn:hover {
@@ -454,7 +483,7 @@ html[data-theme="dark"] .btn--inverse {
 /* Bento homepage */
 .bento-grid {
   display: grid;
-  grid-template-columns: 1.35fr 0.9fr 1.1fr;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr) minmax(0, 1.1fr);
   grid-template-areas:
     "hero avatar pubs"
     "work project pubs"
@@ -469,10 +498,29 @@ html[data-theme="dark"] .btn--inverse {
   height: 100%;
 }
 
-@media (max-width: 1100px) {
+/* Medium screens / big zoom: keep the bento feel but avoid cramped 3-column layout. */
+@media (max-width: 1300px) {
+  .bento-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+    grid-template-areas:
+      "hero avatar"
+      "work project"
+      "pubs pubs"
+      "contact contact";
+  }
+}
+
+/* Small screens: single column stack. */
+@media (max-width: 900px) {
   .bento-grid {
     grid-template-columns: 1fr;
-    grid-template-areas: none;
+    grid-template-areas:
+      "hero"
+      "avatar"
+      "work"
+      "project"
+      "pubs"
+      "contact";
   }
 }
 
@@ -507,6 +555,13 @@ html[data-theme="dark"] .btn--inverse {
   box-shadow: var(--ui-shadow-soft);
   padding: 1.05rem 1.1rem;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .bento-card {
+    padding: 0.95rem 0.95rem;
+  }
 }
 
 .bento-card:hover {
@@ -536,6 +591,34 @@ html[data-theme="dark"] .bento-hero {
   gap: 0.9rem;
   margin-top: 0.85rem;
   align-items: start;
+}
+
+@media (max-width: 900px) {
+  .bento-hero__split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-mini-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+  color: var(--ui-muted);
+  font-size: 0.98rem;
+}
+
+html[data-theme="dark"] .bento-mini-list {
+  color: var(--ui-muted-dark);
+}
+
+.bento-mini-list strong {
+  color: var(--ui-text);
+}
+
+html[data-theme="dark"] .bento-mini-list strong {
+  color: var(--ui-text-dark);
 }
 
 .bento-hero__chips {
@@ -770,15 +853,15 @@ html[data-theme="dark"] .bento-muted {
   padding: 0.35rem 0.6rem;
   border-radius: 999px;
   border: 1px solid var(--ui-border);
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(15, 23, 42, 0.03);
   font-size: 0.9rem;
   color: rgba(15, 23, 42, 0.78);
 }
 
 html[data-theme="dark"] .bento-tag {
-  border-color: var(--ui-border-dark);
-  background: rgba(248, 250, 252, 0.06);
-  color: rgba(226, 232, 240, 0.82);
+  border-color: var(--ui-border);
+  background: rgba(15, 23, 42, 0.03);
+  color: rgba(15, 23, 42, 0.78);
 }
 
 .bento-list__items {
@@ -797,7 +880,7 @@ html[data-theme="dark"] .bento-tag {
   padding: 0.7rem 0.8rem;
   border-radius: 16px;
   border: 1px solid var(--ui-border);
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.98);
   text-decoration: none;
   transition: transform 160ms ease, background 160ms ease;
 }
@@ -819,16 +902,16 @@ html[data-theme="dark"] .bento-list__thumb {
 
 .bento-list__row:hover {
   transform: translateY(-1px);
-  background: rgba(255, 236, 234, 0.65);
+  background: rgba(15, 23, 42, 0.03);
 }
 
 html[data-theme="dark"] .bento-list__row {
-  border-color: var(--ui-border-dark);
-  background: rgba(248, 250, 252, 0.05);
+  border-color: var(--ui-border);
+  background: rgba(255, 255, 255, 0.98);
 }
 
 html[data-theme="dark"] .bento-list__row:hover {
-  background: rgba(45, 212, 191, 0.08);
+  background: rgba(15, 23, 42, 0.03);
 }
 
 .bento-list__title {
