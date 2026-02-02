@@ -10,6 +10,10 @@ redirect_from:
 
 {% include base_path %}
 
+<div class="cv-download-links" style="margin: 0 0 1rem 0;">
+  <a href="{{ '/files/cv.pdf' | relative_url }}" class="btn btn--primary" download>Download CV (PDF)</a>
+</div>
+
 Summary
 ======
 PhD candidate at ETRO (VUB) focused on computer vision and AI for autonomous driving and drone navigation, with expertise in detection, multi-object tracking, and VLMs.
