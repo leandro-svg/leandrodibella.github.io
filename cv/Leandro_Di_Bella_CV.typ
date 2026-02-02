@@ -19,7 +19,7 @@
 
 // ------------------ Blocks ------------------
 #let section(title) = [
-  #block(above: 20pt, below: 0pt)[
+  #block(above: 16pt, below: 0pt)[
     #grid(
       columns: (auto, 1fr),
       gutter: 8pt,
@@ -28,7 +28,7 @@
       [#line(length: 100%, stroke: (paint: accent, thickness: 1.1pt))],
     )
   ]
-  #v(10pt)
+  #v(8pt)
 ]
 
 // Small uppercase role line
@@ -49,39 +49,13 @@
   ]
 ]
 
-// Small header icon
-#let icon(path, height: 9pt) = [
-  #image(path, height: height, fit: "contain")
+// Small header icon (baseline-friendly)
+#let icon(path, h: 9pt) = [
+  #box(height: h)[#image(path, height: h, fit: "contain")]
 ]
 
-// Header inline item with separators
-#let header_row(items) = [
-  #set text(size: 10pt)
-  #set par(leading: 0.45em, spacing: 0pt)
-  #align(center)[
-    #for i in range(items.len()) [
-      #items.at(i)
-      #if i < items.len() - 1 [
-        #h(10pt) #text(fill: muted)[|] #h(10pt)
-      ]
-    ]
-  ]
-]
-
-// Header items stacked vertically (one after the other)
-#let header_stack(items, gap: 2.5pt) = [
-  #set text(size: 10pt)
-  #set par(leading: 0.55em, spacing: 0pt)
-  #align(center)[
-    #for i in range(items.len()) [
-      #items.at(i)
-      #if i < items.len() - 1 [
-        #v(gap)
-      ]
-    ]
-  ]
-]
-
+// Separator used in header rows
+#let sep = [#h(3pt) #text(fill: muted)[|] #h(7pt)]
 
 // Compact Experience row:
 // Col1: org + (ROLE • location) in max 2 lines
@@ -94,7 +68,6 @@
     gutter: 7pt,
     align: (left, left),
 
-    // Col 1: org + role only (no location here)
     [
       #text(weight: "bold")[#org]
       #v(1.5pt)
@@ -103,14 +76,12 @@
       ]
     ],
 
-    // Col 2: dates + location (max two lines)
     [
       #text(size: 9.1pt, fill: muted, style: "italic")[#dates]
       #v(1.5pt)
       #text(size: 9.1pt, fill: loc, style: "italic")[#location]
     ],
 
-    // Col 3: description (slightly narrower than before)
     [
       #set par(leading: 0.54em, spacing: 0.14em)
       #body
@@ -118,7 +89,6 @@
   )
   #v(8pt)
 ]
-
 
 // Education row
 #let edu(school, degree, location, dates, bullets: none) = [
@@ -140,9 +110,9 @@
 
     [
       #align(right)[
-        #text(fill: loc, style: "italic", size: 9.2pt)[#location]
+        #text(fill: loc, style: "italic", size: 8.9pt)[#location]
         #v(1pt)
-        #text(fill: muted, style: "italic", size: 9.2pt)[#dates]
+        #text(fill: muted, style: "italic", size: 8.9pt)[#dates]
       ]
     ],
   )
@@ -158,17 +128,17 @@
     [#text(weight: "bold")[#label]],
     [#text(fill: muted)[#items]],
   )
-  #v(2.2pt)
+  #v(2pt)
 ]
 
 // Publication item (compact)
 #let pub_item(title, authors, venue_line) = [
   #text(weight: "bold")[#title]
   #v(1pt)
-  #text(size: 9.2pt, fill: muted)[#authors]
+  #text(size: 8.8pt, fill: muted)[#authors]
   #v(1pt)
-  #text(size: 9.2pt, fill: muted, style: "italic")[#venue_line]
-  #v(6pt)
+  #text(size: 8.8pt, fill: muted, style: "italic")[#venue_line]
+  #v(5pt)
 ]
 
 // ------------------ HEADER (like reference) ------------------
@@ -177,28 +147,44 @@
   gutter: 14pt,
   align: (left, center),
 
-  // Photo (comment to remove)
   [#avatar("../images/profile_picture.jpg")],
 
   [
     #align(center)[
-      #text(size: 32pt, weight: "bold")[Leandro Di Bella]
+      #text(size: 28pt, weight: "bold")[Leandro Di Bella]
       #v(3pt)
       #caps_line("Software engineer – (3D) computer vision engineer – machine learning engineer")
-      #v(8pt)
+      #v(7pt)
 
-      #header_stack((
-        [📍 #text(fill: muted)[Brussels, Belgium]],
-        [#icon("header/at.png") #h(4pt) #link("mailto:leandro.dibella@gmail.com")[#text(fill: muted)[leandro.dibella\@gmail.com]]],
-        [🌐 #link("https://leandrodibella.github.io")[#text(fill: muted)[leandrodibella.github.io]]],
-        [#icon("header/github.png") #h(4pt) #link("https://github.com/leandro-svg")[#text(fill: muted)[leandro-svg]]],
-        [#icon("header/linkedin.png") #h(4pt) #link("https://www.linkedin.com/in/leandro-di-bella-62381413b/")[#text(fill: muted)[leandro-di-bella]]],
-        [🎓 #link("https://scholar.google.de/citations?user=f7IDHsgAAAAJ&hl=en")[#text(fill: muted)[Scholar]]],
-        [#icon("header/orcid.png") #h(4pt) #link("https://orcid.org/0009-0000-1731-7205")[#text(fill: muted)[ORCID]]],
-        [#icon("header/mappx.jpeg") #h(4pt) #link("https://mappx.app")[#text(fill: muted)[mappx.app]]],
-      ))
+      // Row 1 (3 items, like the sample)
+      #set text(size: 9.0pt)
+      📍 #text(fill: muted)[Brussels, Belgium]
+      #sep
+      #icon("header/at.png", h: 9pt) #h(3pt)
+      #link("mailto:leandro.dibella@gmail.com")[#text(fill: muted)[leandro.dibella\@gmail.com]]
+      #sep
+      🌐 #link("https://leandrodibella.github.io")[#text(fill: muted)[leandrodibella.github.io]]
 
-      #v(10pt)
+      #v(4pt)
+
+      // Row 2 (keep it on ONE line; slightly smaller font)
+      #set text(size: 8.8pt)
+      #icon("header/github.png", h: 9pt) #h(3pt)
+      #link("https://github.com/leandro-svg")[#text(fill: muted)[leandro-svg]]
+      #sep
+      #icon("header/linkedin.png", h: 9pt) #h(3pt)
+      #link("https://www.linkedin.com/in/leandro-di-bella-62381413b/")[#text(fill: muted)[leandro-di-bella]]
+      #sep
+      🎓 #link("https://scholar.google.de/citations?user=f7IDHsgAAAAJ&hl=en")[#text(fill: muted)[Scholar]]
+      #sep
+      #icon("header/orcid.png", h: 9pt) #h(3pt)
+      #link("https://orcid.org/0009-0000-1731-7205")[#text(fill: muted)[ORCID]]
+      #sep
+      #icon("header/mappx.jpeg", h: 9pt) #h(3pt)
+      #link("https://mappx.app")[#text(fill: muted)[mappx.app]]
+
+      #v(7pt)
+      #set text(size: 9.2pt)
       #text(fill: muted, style: "italic")[
         “Deployable autonomous perception with temporal consistency and robustness under distribution shift.”
       ]
@@ -206,14 +192,14 @@
   ],
 )
 
-#v(10pt)
+#v(8pt)
 #line(length: 100%, stroke: (paint: rule, thickness: 0.9pt))
-#v(14pt)
+#v(4pt)
 
 // ------------------ CONTENT ------------------
 #section("Summary")
 #text()[
-  PhD candidate looking for a full-time opportunity. Specialized in computer vision and AI for autonomous driving and autonomous navigation for drones, with expertise in detection, multi-object tracking, and vision-language models (VLMs). Currently working on multi-agent motion forecasting using flow-based generative AI for autonomous perception and modular sensor fusion for autonomous drones. Seeking to contribute to Belgium’s research and innovation ecosystem by advancing AI solutions for intelligent systems.
+  PhD candidate looking for a full-time opportunity. Specialized in computer vision and AI for autonomous driving and autonomous navigation for drones, with expertise in detection, multi-object tracking, and vision-language models (VLMs). Currently working on multi-agent motion forecasting using flow-based generative AI for autonomous perception and modular sensor fusion for autonomous drones. Seeking to contribute to Europe's research and innovation ecosystem by advancing AI solutions for intelligent systems.
 ]
 
 #section("Experience")
@@ -223,9 +209,7 @@
   "Computer Vision Researcher",
   "Brussels, Belgium",
   "Jan. 2026 – Present",
-  [
-    Sensor fusion and localization for autonomous drone systems.
-  ],
+  [Sensor fusion and localization for autonomous drone systems.],
 )
 
 #exp_compact(
@@ -233,9 +217,7 @@
   "Computer Vision Researcher",
   "Brussels, Belgium",
   "Jan. 2023 – Jan. 2026",
-  [
-    Detection, 3D multi-object tracking, scene understanding, and motion forecasting for autonomous vehicles using generative AI.
-  ],
+  [Detection, 3D multi-object tracking, scene understanding, and motion forecasting for autonomous vehicles using generative AI.],
 )
 
 #exp_compact(
@@ -243,9 +225,7 @@
   "Founder",
   "Brussels, Belgium",
   "Aug. 2025 – Present",
-  [
-    Built a map-centric social travel app (Flutter) with FastAPI backend and PostgreSQL. \
-  ],
+  [Built a map-centric social travel app (Flutter) with FastAPI backend and PostgreSQL.],
 )
 
 #exp_compact(
@@ -253,46 +233,21 @@
   "Computer Vision Intern",
   "Brussels, Belgium",
   "Aug. 2022 – Oct. 2022",
-  [
-    Developed and integrated instance segmentation on NVIDIA Jetson TX2 (Python/C++).
-  ],
+  [Developed and integrated instance segmentation on NVIDIA Jetson TX2 (Python/C++).],
 )
 
 #exp_compact(
-  "Vrije Universiteit Brussel (VUB)",
+  "Vrije Universiteit Brussel",
   "Teaching Assistant",
   "Brussels, Belgium",
   "~2022 – 2025",
-  [
-    Teaching assistant for Machine Learning and Big Data Processing (2.5 years).
-  ],
+  [Teaching assistant for Machine Learning and Big Data Processing (2.5 years).],
 )
 
 #section("Education")
-#edu(
-  "ETRO, Vrije Universiteit Brussel (VUB)",
-  "PhD in Engineering Sciences (AI & Computer Vision)",
-  "Brussels, Belgium",
-  "2023 – Present",
-)
-#edu(
-  "Solvay Brussels School",
-  "Advanced Master in Industrial & Technological Management",
-  "Brussels, Belgium",
-  "2025 – 2027 (ongoing)",
-)
-#edu(
-  "Bruface (ULB/VUB)",
-  "M.Sc. Electrical Engineering (Information Technology Systems)",
-  "Brussels, Belgium",
-  "2020 – 2023",
-)
-#edu(
-  "Bruface (ULB/VUB)",
-  "B.Eng.",
-  "Brussels, Belgium",
-  "2017 – 2020",
-)
+#edu("ETRO, Vrije Universiteit Brussel (VUB)", "PhD in Engineering Sciences (AI & Computer Vision)", "Brussels, Belgium", "2023 – Present")
+#edu("Solvay Brussels School", "Advanced Master in Industrial & Technological Management", "Brussels, Belgium", "2025 – 2027 (ongoing)")
+#edu("Bruface (ULB/VUB)", "M.Sc. Electrical Engineering (Information Technology Systems)", "Brussels, Belgium", "2020 – 2023")
 
 #section("Selected publications")
 #grid(
@@ -300,9 +255,7 @@
   gutter: 16pt,
 
   [
-    #grid(columns: (auto, 1fr), gutter: 8pt, align: (left, center),
-      [#text(size: 14pt, weight: "bold", fill: accent)[Selected journal articles]],
-      [#line(length: 100%, stroke: (paint: accent, thickness: 1pt))],
+    #grid(columns: (auto, 1fr), gutter: 4pt, align: (left, center),
     )
     #v(6pt)
 
@@ -312,18 +265,16 @@
       "IEEE RA-L / ICRA (2025)",
     )
     #pub_item(
-      "DeepKalPose: An enhanced deep-learning Kalman filter for temporally consistent monocular vehicle pose estimation",
+      "DeepKalPose: An enhanced deep-learning Kalman filter for temporally consistent pose estimation",
       "L. Di Bella, Y. Lyu, A. Munteanu",
       "Electronics Letters (2024)",
     )
   ],
 
   [
-    #grid(columns: (auto, 1fr), gutter: 8pt, align: (left, center),
-      [#text(size: 14pt, weight: "bold", fill: accent)[Selected conference proceedings]],
-      [#line(length: 100%, stroke: (paint: accent, thickness: 1pt))],
+    #grid(columns: (auto, 1fr), gutter: 7pt, align: (left, center),
     )
-    #v(6pt)
+    #v(5pt)
 
     #pub_item(
       "ReferGPT: Towards Zero-Shot Referring Multi-Object Tracking",
@@ -345,6 +296,3 @@
 #skill("Systems / Deployment", "Jetson, Docker, GitHub CI/CD, Azure cloud services, Firebase, PostgreSQL")
 #skill("Product", "Mapbox, backend ops, shipping & iteration")
 #skill("Academic service", "Reviewer: TIP, RA-L, ICRA, ICIP, IET")
-
-#v(6pt)
-#text(size: 8.9pt, fill: muted)[Last updated: #datetime.today().display("[year]-[month]-[day]")]
