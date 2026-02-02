@@ -1,0 +1,120 @@
+% Modern one-page-ish academic CV (LaTeX)
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.7cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=MidnightBlue,
+  citecolor=MidnightBlue
+}
+
+\definecolor{MidnightBlue}{HTML}{0F4C81}
+\definecolor{Muted}{HTML}{334155}
+\definecolor{Rule}{HTML}{CBD5E1}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\titleformat{\section}{\large\bfseries\color{MidnightBlue}}{}{0em}{}[\vspace{2pt}\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+\newcommand{\tightlist}{\setlist[itemize]{leftmargin=*, nosep, topsep=2pt}}
+\newcommand{\role}[2]{\textbf{#1}\hfill\textcolor{Muted}{#2}\\}
+\newcommand{\subrole}[2]{\textit{#1}\hfill\textcolor{Muted}{#2}\\}
+
+\begin{document}
+
+% Header
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+  {\Huge \textbf{Leandro Di Bella}} & {\textcolor{Muted}{Brussels, Belgium}}\\
+  {\textcolor{Muted}{PhD candidate (ETRO, VUB) \;\textbullet\; Autonomous Perception \;\textbullet\; Tracking \;\textbullet\; Vision-Language}} & \\
+\end{tabularx}
+
+\vspace{4pt}
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+  \href{mailto:leandro.dibella@gmail.com}{\faEnvelope\; leandro.dibella@gmail.com} \quad
+  \href{https://github.com/leandro-svg}{\faGithub\; leandro-svg} \quad
+  \href{https://scholar.google.de/citations?user=f7IDHsgAAAAJ&hl=en}{\faGraduationCap\; Google Scholar} \quad
+  \href{https://orcid.org/0009-0000-1731-7205}{\faIdBadge\; ORCID} \quad
+  \href{https://www.linkedin.com/in/leandro-di-bella-62381413b/}{\faLinkedin\; LinkedIn}
+  & \href{https://mappx.app}{\faLink\; mappx.app}\\
+\end{tabularx}
+
+\vspace{6pt}
+\hrule height 0.6pt \vspace{10pt}
+
+\section*{Summary}
+Computer vision \& generative AI for autonomous perception in driving and drones. Focus on deployable systems with \textbf{temporal consistency}, \textbf{robustness under distribution shift}, and \textbf{real-time constraints}. Interests: multi-object tracking (3D MOT), vision-language grounding/reasoning, and motion forecasting.
+
+\section{Education}
+\role{PhD in Engineering Sciences (AI \& Computer Vision) \textemdash\ ETRO, Vrije Universiteit Brussel (VUB)}{2023--Present}
+\subrole{Research: autonomous perception, tracking, vision-language, forecasting}{Brussels, Belgium}
+
+\role{Advanced Master in Industrial \& Technological Management \textemdash\ Solvay Brussels School}{2025--2027 (ongoing)}
+
+\role{M.Sc. Electrical Engineering (Information Technology Systems) \textemdash\ Bruface (ULB/VUB)}{2020--2023}
+
+\role{B.Eng. \textemdash\ Bruface (ULB/VUB)}{2017--2020}
+
+\section{Experience}
+\role{Founder \textemdash\ Mappx}{Aug 2025--Present}
+\tightlist
+\begin{itemize}
+  \item Built a map-centric social travel app (Flutter) with a FastAPI backend and PostgreSQL.
+  \item Deployed and operated cost-effective infrastructure using Azure and Firebase.
+\end{itemize}
+
+\role{Intern \textemdash\ MACQ Mobility}{Aug 2022--Oct 2022}
+\tightlist
+\begin{itemize}
+  \item Developed and integrated instance segmentation on NVIDIA Jetson TX2 (Python/C++).
+\end{itemize}
+
+\role{Teaching Assistant \textemdash\ Vrije Universiteit Brussel (VUB)}{\textasciitilde 2022--2025}
+\tightlist
+\begin{itemize}
+  \item Machine Learning and Big Data Processing (2.5 years).
+\end{itemize}
+
+\section{Selected Publications}
+\tightlist
+\begin{itemize}
+  \item \textbf{HybridTrack}: A Hybrid Approach for Robust Multi-Object Tracking. \textit{IEEE RA-L / ICRA}. (2025)
+  \item \textbf{ReferGPT}: Towards Zero-Shot Referring Multi-Object Tracking. \textit{CVPR Workshops}. (2025)
+  \item \textbf{DeepKalPose}: Temporally Consistent Monocular Vehicle Pose Estimation. \textit{Electronics Letters}. (2024)
+  \item \textbf{ChronoFusion}: Spatio-Temporal Super-Resolution via Graph VAEs and Gated Fusion. \textit{EUVIP}. (2025)
+\end{itemize}
+
+\section{Projects}
+\role{Embedded AI \textemdash\ Real-Time Instance Segmentation with TensorRT/ONNX}{2023}
+\tightlist
+\begin{itemize}
+  \item Optimized SparseInst and YOLOv7 for real-time deployment on NVIDIA edge devices using CUDA/TensorRT.
+\end{itemize}
+
+\section{Skills}
+\textbf{Programming:} Python, C++, CUDA, PyTorch, Flutter/Dart, FastAPI\\
+\textbf{Platforms/Tools:} Docker, Azure, Firebase, GitHub, VS Code, PostgreSQL\\
+\textbf{Research:} Multi-object tracking, autonomous perception, vision-language models, forecasting
+
+\section{Languages}
+French (Native) \;\textbullet\; English (C1) \;\textbullet\; Dutch (B1)
+
+\section{Supervision}
+Supervised 6 Master’s theses (topics: coral reef fish ID; monocular 3D detection; drone navigation in GNSS-degraded settings; pruning/quantization; pedestrian intention via VLM action models; pose estimation on embedded devices).
+
+\vspace{4pt}
+{\small\textcolor{Muted}{Last updated: \today}}
+
+\end{document}

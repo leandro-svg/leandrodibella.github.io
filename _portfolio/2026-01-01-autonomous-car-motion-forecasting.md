@@ -12,5 +12,3 @@ Focus
 * **Multi-agent motion forecasting** with interaction-aware modeling.
 * **Generative forecasting** (e.g., flow-based / diffusion-style approaches) for multimodal futures.
 * Practical emphasis: metrics, calibration, and robustness for downstream planning.
-
-I can expand this with your exact setting later (dataset, horizon, representation, model family, and results).

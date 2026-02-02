@@ -21,7 +21,6 @@ What I’m working on
 * Improving forecasting quality in interactive scenes by modeling multi-agent dynamics.
 * Building deployment-minded systems: latency-aware, stable, and testable on real platforms.
 
-If you want, I can tailor this page to the exact setup you use (sensors, platform, and whether you’re targeting onboard inference or offboard).
 
 Project date
 ======
