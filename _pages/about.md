@@ -29,7 +29,7 @@ redirect_from:
     </div>
     <div class="bento-actions">
       <a class="btn btn--primary" href="{{ '/cv/' | relative_url }}">CV</a>
-      <a class="btn btn--inverse" href="{{ '/files/cv.pdf' | relative_url }}" download>Download CV (PDF)</a>
+
       <a class="btn btn--inverse" href="{{ '/publications/' | relative_url }}">Publications</a>
       <a class="btn btn--inverse" href="{{ '/portfolio/' | relative_url }}">Projects</a>
     </div>
